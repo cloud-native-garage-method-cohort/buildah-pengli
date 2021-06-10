@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: clone-and-build
+spec:
+  pipelineRef:
+    name: clone-and-build
+  workspaces:
+  - name: pipeline-shared-data
+    persistentVolumeClaim:
+      claimName: pvc-133c281df0
